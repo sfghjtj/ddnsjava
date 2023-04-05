@@ -50,7 +50,7 @@ public class DataSourceConfig {
     public SqlSessionFactoryBean sqlSessionFactoryBean(@Autowired @Qualifier("druidDataSource") DruidDataSource druidDataSource) {
         SqlSessionFactoryBean ssb = new SqlSessionFactoryBean();
         ssb.setDataSource(druidDataSource);
-        //ssb.setTypeAliasesPackage("pers.zhw.model");
+        ssb.setTypeAliasesPackage("pers.zhw.model");
         return ssb;
     }
 
