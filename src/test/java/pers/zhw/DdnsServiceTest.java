@@ -10,6 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.junit.jupiter.SpringJUnitConfig;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
+import java.util.Date;
+
 import pers.zhw.config.SpringConfig;
 import pers.zhw.model.DdnsIpLog;
 import pers.zhw.service.DdnsService;
@@ -29,6 +31,15 @@ public class DdnsServiceTest {
     public void findDao() {
         DdnsIpLog lastedIp = ddnsService.findLastedIp();
         logger.error(JSON.toJSONString(lastedIp));
+    }
+
+    @Test
+    public void saveDao() {
+        DdnsIpLog ipLog = new DdnsIpLog();
+        ipLog.setIpAddr("192.168.2.22").setCreateTime(new Date()).setModifyTime(new Date());
+        Integer ipId = ddnsService.saveLastedIp(ipLog);
+        logger.error(JSON.toJSONString(ipLog));
+
     }
 
 }

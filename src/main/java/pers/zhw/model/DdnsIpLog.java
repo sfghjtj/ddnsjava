@@ -16,6 +16,8 @@ import lombok.experimental.Accessors;
 @AllArgsConstructor
 public class DdnsIpLog {
 
+    private Integer id;
+
     /**
      * ipv4地址
      */

@@ -1,6 +1,8 @@
 package pers.zhw.mapper;
 
+import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Options;
 import org.apache.ibatis.annotations.ResultMap;
 import org.apache.ibatis.annotations.Select;
 
@@ -16,5 +18,8 @@ public interface DdnsIpLogMapper {
     @ResultMap("ipLog")
     DdnsIpLog findDdnsIpLatest();
 
-   // Long insertDdnsIpLog(DdnsIpLog entity);
+    @Insert("INSERT INTO DDNS_IP_LOG(ip_addr,create_time,modify_time) VALUES(#{ipAddr},#{createTime},#{modifyTime})")
+    @Options(useGeneratedKeys = true, keyProperty = "id")
+    Integer insertDdnsIpLog(DdnsIpLog ddnsIpLog);
+
 }

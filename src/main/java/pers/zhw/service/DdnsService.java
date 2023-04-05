@@ -24,4 +24,7 @@ public class DdnsService {
         return ddnsIpLogMapper.findDdnsIpLatest();
     }
 
+    public Integer saveLastedIp(DdnsIpLog ddnsIpLog) {
+        return ddnsIpLogMapper.insertDdnsIpLog(ddnsIpLog);
+    }
 }
