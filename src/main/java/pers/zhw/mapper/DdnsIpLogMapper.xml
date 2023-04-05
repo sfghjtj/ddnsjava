@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pers.zhw.mapper.DdnsIpLogMapper">
+    <select id="findDdnsIpLatest" resultType="pers.zhw.model.DdnsIpLog">
+        select ip_addr, create_time, modify_time from DDNS_IP_LOG order by Id desc  limit 1
+    </select>
+</mapper>
