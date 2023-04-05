@@ -1,0 +1,23 @@
+
+apply plugin: 'java'
+apply plugin: 'application'
+apply plugin: 'idea'
+
+repositories {
+    maven {
+        url 'https://maven.aliyun.com/repository/public/'
+    }
+    maven {
+        url 'https://maven.aliyun.com/repository/spring/'
+    }
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.slf4j:slf4j-api:1.7.21'
+    testCompile 'junit:junit:4.12'
+    compile group: 'org.springframework', name: 'spring-context', version: '5.3.15'
+    testCompile group: 'org.springframework', name: 'spring-test', version: '5.3.15'
+    compileOnly group: 'org.projectlombok', name: 'lombok', version: '1.18.2'
+}
