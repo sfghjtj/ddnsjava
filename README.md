@@ -33,7 +33,7 @@ ali_access_key_Id =yourKeyId
 ali_access_key_secret = yourKeySecret
 ali_first_domain_name = yourFirstDomain(e.g. ddnslearn.cn)
 ali_second_domain_prefix = yourSecondDomainPrefix(e.g. www)
-# 本地域名解析服务器过期时间，个人版默认600秒，可升级企业版，最快1s（时间不够，money来凑！😅）
+# 本地域名解析服务器过期时间，个人版默认600秒，可升级企业版，最快1s（时间不够，money来凑！😅，不过个人版感觉足够，相对于第三方比如花生壳同样的ttl 阿里的稳定性更好）
 ali_dns_ttl = 600
 
 ````
