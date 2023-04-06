@@ -1,13 +1,8 @@
 package pers.zhw.service;
 
-import com.alibaba.druid.pool.DruidDataSource;
-
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.ApplicationContext;
-import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.stereotype.Service;
 
-import pers.zhw.config.SpringConfig;
 import pers.zhw.mapper.DdnsIpLogMapper;
 import pers.zhw.model.DdnsIpLog;
 
@@ -26,5 +21,9 @@ public class DdnsService {
 
     public Integer saveLastedIp(DdnsIpLog ddnsIpLog) {
         return ddnsIpLogMapper.insertDdnsIpLog(ddnsIpLog);
+    }
+
+    public void deleteOneMonthAgo() {
+        ddnsIpLogMapper.delOneMonteAgo();
     }
 }
