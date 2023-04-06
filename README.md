@@ -14,7 +14,7 @@ CREATE TABLE `DDNS_IP_LOG` (
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='DNS绑定的路由器wanIp';
 ````
 
-### 二、配置文件
+### 二、配置文件ddns.properties
 ````properties
 ## jdbc config
 jdbc_driver=com.mysql.jdbc.Driver
