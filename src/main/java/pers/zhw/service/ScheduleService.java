@@ -41,7 +41,6 @@ public class ScheduleService {
     /**
      * 定时更新dns
      */
-    @Async
     @Scheduled(fixedDelay = 30_000, initialDelay = 30_000)
     protected void refreshDdnsLog() {
         this.initIpLog();

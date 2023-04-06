@@ -1,6 +1,6 @@
 ## 通过阿里云SDK设置DDNS
 
-### mysql 5.7 
+### 一、mysql 5.7 
 ````mysql
 create database ddns;
 use ddns;

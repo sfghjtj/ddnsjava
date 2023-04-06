@@ -35,6 +35,7 @@ dependencies {
     compile 'com.alibaba:fastjson:1.2.83'
     compile 'com.squareup.okhttp3:okhttp:3.6.0'
     compile 'org.apache.commons:commons-lang3:3.12.0'
+    compile 'com.aliyun:alidns20150109:3.0.3'
 }
 
 // 包含xml文件
