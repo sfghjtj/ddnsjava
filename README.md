@@ -1,4 +1,8 @@
 ## 通过阿里云SDK设置DDNS
+- 环境: 
+    * mysql 5.7+
+    * jdk 8+ 
+    * gradle 无需配置相关环境
 
 ### 一、mysql 5.7 
 ````mysql
@@ -29,11 +33,19 @@ ali_access_key_Id =yourKeyId
 ali_access_key_secret = yourKeySecret
 ali_first_domain_name = yourFirstDomain(e.g. ddnslearn.cn)
 ali_second_domain_prefix = yourSecondDomainPrefix(e.g. www)
-# 本地域名解析服务器过期时间，个人版默认600秒，可升级企业版，最快1s
+# 本地域名解析服务器过期时间，个人版默认600秒，可升级企业版，最快1s（时间不够，money来凑！😅）
 ali_dns_ttl = 600
 
 ````
+
 ### 三、编译&执行
-- ./gradlew clean build
+1. 编译 
+- mac os/linux系统执行： ./gradlew clean build
+- windows系统 执行：./gradlew.bat clean build
+- 编译可执行jar包路径：build/libs/ddnsjava-1.0-SNAPSHOT.jar
+
+2. 项目执行日志文件添加权限(windows系统自行修改log4j2.xml中日志目录)
 - sudo chmod o+w /var/log
-- java -jar -Xms64m -Xmx128m -XX:MaxMetaspaceSize=128m /Users/sfghjtj/Documents/java/personal_pro/ddnsjava/build/libs/ddnsjava-1.0-SNAPSHOT.jar 
+
+3. 命令行执行即可
+- java -jar -Xms64m -Xmx128m -XX:MaxMetaspaceSize=128m build/libs/ddnsjava-1.0-SNAPSHOT.jar
