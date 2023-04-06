@@ -46,3 +46,12 @@ processResources {
 }
 
 mainClassName = 'pers.zhw.main.DdnsMain'
+
+jar {
+    from {
+        configurations.compile.collect { it.isDirectory() ? it : zipTree(it) }
+    }
+    manifest {
+        attributes 'Main-Class': 'pers.zhw.main.DdnsMain'
+    }
+}

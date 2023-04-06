@@ -18,4 +18,5 @@ public class SpringConfig {
         threadPoolTaskScheduler.setThreadNamePrefix("ddnsTaskExecutor");
         return threadPoolTaskScheduler;
     }
+
 }

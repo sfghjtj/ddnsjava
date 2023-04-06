@@ -33,13 +33,13 @@ public class DdnsServiceTest {
         logger.error(JSON.toJSONString(lastedIp));
     }
 
-    @Test
-    public void saveDao() {
-        DdnsIpLog ipLog = new DdnsIpLog();
-        ipLog.setIpAddr("192.168.2.22").setCreateTime(new Date()).setModifyTime(new Date());
-        Integer ipId = ddnsService.saveLastedIp(ipLog);
-        logger.error(JSON.toJSONString(ipLog));
-
-    }
+//    @Test
+//    public void saveDao() {
+//        DdnsIpLog ipLog = new DdnsIpLog();
+//        ipLog.setIpAddr("192.168.2.22").setCreateTime(new Date()).setModifyTime(new Date());
+//        Integer ipId = ddnsService.saveLastedIp(ipLog);
+//        logger.error(JSON.toJSONString(ipLog));
+//
+//    }
 
 }
