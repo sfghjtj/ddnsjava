@@ -78,7 +78,7 @@ public class AliDdnsSdkService {
             DescribeDomainRecordsResponse describeDomainRecordsResponse = client.describeDomainRecordsWithOptions(describeDomainRecordsRequest, runtime);
             return describeDomainRecordsResponse.body.domainRecords.record.get(0).value;
         } catch (Exception _error) {
-            log.error("++++++++获取域名解析ip地址错误", _error);
+            log.error("++++++++获取域名解析ip地址错误++++++++", _error);
         }
         return null;
     }
@@ -98,7 +98,7 @@ public class AliDdnsSdkService {
             DescribeDomainRecordsResponse describeDomainRecordsResponse = client.describeDomainRecordsWithOptions(describeDomainRecordsRequest, runtime);
             return describeDomainRecordsResponse.body.domainRecords.record.get(0).recordId;
         } catch (Exception _error) {
-            log.error("++++++++获取域名解析记录id错误", _error);
+            log.error("++++++++获取域名解析记录id错误++++++++", _error);
         }
         return null;
     }
@@ -116,9 +116,10 @@ public class AliDdnsSdkService {
             }
             request.setRR(second_domain_prefix).setRecordId(recordId).setType("A").setValue(ipv4).setTTL(ttl).setPriority(1L);
             client.updateDomainRecord(request);
+            log.error("++++++++设置ip{}成功！++++++++", ipv4);
             return true;
         } catch (Exception _error) {
-            log.error("++++++++设置域名解析的地址", _error);
+            log.error("++++++++设置域名解析的地址++++++++", _error);
         }
         return false;
     }
