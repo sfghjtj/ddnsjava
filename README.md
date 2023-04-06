@@ -33,7 +33,7 @@ ali_second_domain_prefix = yourSecondDomainPrefix(e.g. www)
 ali_dns_ttl = 600
 
 ````
-### 编译&执行
+### 三、编译&执行
 - ./gradlew clean build
 - sudo chmod o+w /var/log
 - java -jar -Xms64m -Xmx128m -XX:MaxMetaspaceSize=128m /Users/sfghjtj/Documents/java/personal_pro/ddnsjava/build/libs/ddnsjava-1.0-SNAPSHOT.jar 
