@@ -42,7 +42,7 @@ ali_dns_ttl = 600
 1. 编译 
 - mac os/linux系统执行： ./gradlew clean build
 - windows系统 执行：./gradlew.bat clean build
-- 编译可执行jar包路径：build/libs/ddnsjava-1.0-SNAPSHOT.jar
+- 编译后生成的可执行jar包路径：build/libs/ddnsjava-1.0-SNAPSHOT.jar
 
 2. 项目执行日志文件添加权限(windows系统自行修改log4j2.xml中日志目录)
 - sudo chmod o+w /var/log
