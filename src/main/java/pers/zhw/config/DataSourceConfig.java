@@ -15,7 +15,7 @@ import org.springframework.context.annotation.PropertySource;
  * @Author houwei.zhao@ttpai.cn on 2023/4/5.
  */
 @Configuration
-@PropertySource("classpath:jdbc.properties")
+@PropertySource("classpath:ddns.properties")
 public class DataSourceConfig {
 
     @Bean(name = "druidDataSource")

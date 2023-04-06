@@ -7,6 +7,7 @@ import java.util.Date;
 
 import pers.zhw.mapper.DdnsIpLogMapper;
 import pers.zhw.model.DdnsIpLog;
+import pers.zhw.sdk.aliyun.AliDdnsSdkService;
 
 /**
  * @Author houwei.zhao@ttpai.cn on 2023/4/5.
@@ -16,6 +17,9 @@ public class DdnsService {
 
     @Autowired
     private DdnsIpLogMapper ddnsIpLogMapper;
+
+    @Autowired
+    private AliDdnsSdkService aliDdnsSdkService;
 
     public DdnsIpLog findLastedIp() {
         return ddnsIpLogMapper.findDdnsIpLatest();
@@ -35,8 +39,9 @@ public class DdnsService {
      */
     public void invokeSdkAndSaveIp(String ipv4) {
         DdnsIpLog ipLog = new DdnsIpLog().setIpAddr(ipv4).setCreateTime(new Date()).setModifyTime(new Date());
-
-        this.saveLastedIp(ipLog);
+        if (aliDdnsSdkService.updateDomainIp(ipv4)) {
+            this.saveLastedIp(ipLog);
+        }
     }
 
 }

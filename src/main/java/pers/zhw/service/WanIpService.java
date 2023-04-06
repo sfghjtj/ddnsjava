@@ -48,7 +48,7 @@ public class WanIpService {
             if (matcher.matches()) {
                 return ipv4;
             }
-        } catch (IOException e) {
+        } catch (Exception e) {
             log.error("{}请求ip地址超时：", url, e);
             return null;
         }

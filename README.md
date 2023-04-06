@@ -13,3 +13,23 @@ CREATE TABLE `DDNS_IP_LOG` (
   KEY `IDX_CREATE_TIME`(`CREATE_TIME`)
 ) ENGINE=InnoDB AUTO_INCREMENT=100 DEFAULT CHARSET=utf8 COMMENT='DNS绑定的路由器wanIp';
 ````
+
+### 二、配置文件
+````properties
+## jdbc config
+jdbc_driver=com.mysql.jdbc.Driver
+jdbc_url=jdbc:mysql://{yourIp}:3306/ddns?useSSL=false&useUnicode=true&characterEncoding=UTF-8&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+jdbc_user={your login user}
+jdbc_password={your login pswd}
+jdbc_initSize=5
+jdbc_maxSize=100
+
+## aliyun ddns openapi config
+ali_access_key_Id =yourKeyId
+ali_access_key_secret = yourKeySecret
+ali_first_domain_name = yourFirstDomain(e.g. ddnslearn.cn)
+ali_second_domain_prefix = yourSecondDomainPrefix(e.g. www)
+# 本地域名解析服务器过期时间，个人版默认600秒，可升级企业版，最快1s
+ali_dns_ttl = 600
+
+````
