@@ -50,8 +50,8 @@ ali_dns_ttl = 600
 3. 命令行执行即可
 - java -jar -Xms64m -Xmx128m -XX:MaxMetaspaceSize=128m build/libs/ddnsjava-1.0-SNAPSHOT.jar
 
-### 四、docker容器执行
-1. Dockerfile镜像文件
+### 四、docker容器运行
+1. 创建Dockerfile镜像文件
 ````
 # 添加java基础镜像
 FROM java:8
@@ -66,11 +66,11 @@ RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # 配置容器启动后执行命令
 ENTRYPOINT java ${JAVA_OPTS} -jar /ddns.jar
 ````
-2. 构建镜像
+2. 运行构建镜像命令，生成image
 ````shell script
 docker build -t ddns:1.0 .
 ````
-3. 运行容器
+3. 执行run 运行容器
 ````shell script
 docker run -d --cap-add=SYS_PTRACE -v /var/log:/var/log --restart=always -e TZ=Asia/Shanghai  ddns:1.0
 ````
