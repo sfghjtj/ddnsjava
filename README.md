@@ -59,6 +59,10 @@ FROM java:8
 ADD ddnsjava-1.0-SNAPSHOT.jar /ddns.jar
 # 指定日志挂载点
 VOLUME /var/log
+# 设置环境变量
+ENV JAVA_OPTS="-Xms64M -Xmx128M -XX:MaxMetaspaceSize=128M"
+# 设置时区
+RUN ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 # 配置容器启动后执行命令
 ENTRYPOINT java ${JAVA_OPTS} -jar /ddns.jar
 ````
