@@ -46,6 +46,7 @@ public class WanIpService {
             String ipv4 = StringUtils.strip(StringUtils.strip(response.body().string(), ","), "\n");
             Matcher matcher = ipv4_pattern.matcher(ipv4);
             if (matcher.matches()) {
+                log.error("请求ipv4地址是:{}", ipv4);
                 return ipv4;
             }
         } catch (Exception e) {
