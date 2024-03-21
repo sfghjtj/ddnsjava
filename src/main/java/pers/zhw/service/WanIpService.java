@@ -21,7 +21,7 @@ public class WanIpService {
      * 获取路由器wanIp地址
      */
     private static final String[] ip_http_url = new String[]{
-            "http://www.ifconfig.me/ip","https://www.ipinfo.io/ip","https://api.ip.sb/ip",
+            "http://www.ifconfig.me/ip","https://api.ip.sb/ip",
             "https://icanhazip.com","http://ip.3322.net","http://www.3322.org/dyndns/getip"
     };
 
